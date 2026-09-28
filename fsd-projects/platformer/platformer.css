@@ -1,19 +1,29 @@
-body {
-  margin: 0px;
-  background-color: #202737;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.board {
+  width: 600px;
+  height: 200px;
+  background-image: url("lava.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid darkred;
 }
 
-canvas {
-  background-color: lightblue;
-  margin: 20px;
-  border-radius: 15px;
-  border: 5px solid rgba(118, 0, 233, 0.375);
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  color: black;
+  position: absolute;
+  left: 0px;
+  top: 75px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-img {
-  display: none;
-}
+
+

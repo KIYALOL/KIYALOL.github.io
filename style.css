@@ -32,3 +32,35 @@ h2 {
   color: navy;
 }
 
+a {
+  display: inline-block;
+  background-color: white;
+  border: 2px solid blue;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+a:hover {
+  background-color: #dff4ff;
+}
+main {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(420px, 1.6fr);
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  gap: clamp(32px, 5vw, 80px);
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
