@@ -1,31 +1,49 @@
-function init() {
-    // TODO 1 - Enable the Grid
-    // Uncomment the line below to see the grid (make sure to comment it back out before going live!)
-    // toggleGrid();
+$(function () {
+  // initialize canvas and context when able to
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  window.addEventListener("load", loadJson);
 
+  function setup() {
+    if (firstTimeSetup) {
+      halleImage = document.getElementById("player");
+      projectileImage = document.getElementById("projectile");
+      cannonImage = document.getElementById("cannon");
+      $(document).on("keydown", handleKeyDown);
+      $(document).on("keyup", handleKeyUp);
+      firstTimeSetup = false;
+      //start game
+      setInterval(main, 1000 / frameRate);
+    }
+
+    // Create walls - do not delete or modify this code
+    createPlatform(-50, -50, canvas.width + 100, 50); // top wall
+    createPlatform(-50, canvas.height - 10, canvas.width + 100, 200, "navy"); // bottom wall
+    createPlatform(-50, -50, 50, canvas.height + 500); // left wall
+    createPlatform(canvas.width, -50, 50, canvas.height + 100); // right wall
+
+    //////////////////////////////////
+    // ONLY CHANGE BELOW THIS POINT //
+    //////////////////////////////////
+
+    // TODO 1 - Enable the Grid
+    toggleGrid();
 
     // TODO 2 - Create Platforms
-    // At least 5 platforms with different positions and sizes
-    createPlatform(200, 600, 200, 20, "hotpink");
-    createPlatform(500, 480, 150, 20, "orange");
-    createPlatform(750, 360, 200, 20, "yellow");
-    createPlatform(400, 240, 180, 20, "lime");
-    createPlatform(100, 350, 150, 20, "cyan");
+    createPlatform(500, 0, 20, 290);
+    createPlatform(1350, 400, 50, 50, "red");
+    createPlatform(200, 600, 200, 20, "lime");
+    createPlatform(500, 500, 200, 20, "orange");
+    createPlatform(800, 400, 200, 20, "purple");
 
+    // TODO 3 - Create Collectables
 
-    // TODO 3 - Add Collectables
-    // At least 3 collectables using valid types: "database", "diamond", "grace", "kennedi", "max", "steve"
-    createCollectable("diamond", 250, 550, 0.5, 0.7);
-    createCollectable("steve", 800, 300, 0, 0);
-    createCollectable("database", 450, 180, 0.3, 0.5);
+    // TODO 4 - Create Cannons
 
+    //////////////////////////////////
+    // ONLY CHANGE ABOVE THIS POINT //
+    //////////////////////////////////
+  }
 
-    // TODO 4 - Add Cannons
-    // At least 3 cannons on different sides ("left", "right", "top") with varying delays
-    createCannon("left", 400, 2000);
-    createCannon("right", 300, 1500);
-    createCannon("top", 500, 2500);
-
-
-    // TODO 5 - Make your level challenging and playable!
-}
+  registerSetup(setup);
+});

@@ -1,29 +1,13 @@
-.board {
-  width: 600px;
-  height: 200px;
-  background-image: url("lava.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  border: 3px solid darkred;
+body {
+  margin: 0px;
 }
 
-.box {
-  width: 50px;
-  height: 50px;
-  background-color: orange;
-  color: black;
-  position: absolute;
-  left: 0px;
-  top: 75px;
-  text-align: center;
-  line-height: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
+canvas {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR29B4AqhCrXcs14GCaHhqtX_cwZjOIkgJdjPb0XIRHvf2hOWUuIr1XDqw&s=10");
+  background-color: lightblue;
+  margin: 20px;
 }
 
-
-
+img {
+  display: none;
+}

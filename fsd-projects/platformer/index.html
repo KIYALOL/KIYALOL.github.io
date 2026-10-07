@@ -1,92 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Bouncing Box Game</title>
-
-  <style>
-    .board {
-      width: 600px;
-      height: 200px;
-      background-image: url("lava.png");
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .box {
-      width: 50px;
-      height: 50px;
-      background-color: orange;
-      color: black;
-      position: absolute;
-      left: 0px;
-      top: 75px;
-      text-align: center;
-      line-height: 50px;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
-      box-shadow: 0 0 20px yellow;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>platformer</title>
+  <link href="platformer.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="setup.js"></script>
+  <script src="helpers.js"></script>
+  <script src="platformer.js"></script>
 </head>
 
-<body>
-
-  <div class="board">
-    <div class="box">0</div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <script>
-
-    var box = jQuery(".box");
-    var board = jQuery(".board");
-    var boardWidth = board.width();
-
-    var positionX = 0;
-    var points = 0;
-    var speed = 10;
-
-    function moveBoxTo(newPosition) {
-      box.css("left", newPosition + "px");
-    }
-
-    function changeBoxText(newText) {
-      box.text(newText);
-    }
-
-    function update() {
-      positionX = positionX + speed;
-
-      if (positionX > boardWidth) {
-        speed *= -1;
-      }
-
-      if (positionX < 0) {
-        speed *= -1;
-      }
-
-      moveBoxTo(positionX);
-    }
-
-    function handleBoxClick() {
-      positionX = 0;
-      points++;
-      speed = 3 * points + 10;
-      changeBoxText(points);
-    }
-
-    box.on("click", handleBoxClick);
-
-    setInterval(update, 50);
-
-  </script>
-
+<body id="body">
+  <canvas id="canvas" width="1400" height="750"></canvas>
+  <img id="cannon" src="images/cannon.png" />
+  <img id="player" src="images/halle.png" />
+  <img id="projectile" src="images/projectile.png" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg" />
 </body>
+
 </html>
-
-

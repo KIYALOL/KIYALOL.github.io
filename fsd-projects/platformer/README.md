@@ -1,13 +1,13 @@
 # Platformer-neo
 
-### An intro to video game programming featuring HalleBot in a configurable platformer game
+### An intro to video game programming featuring HalleBot in a configurable platformer
 
 **Table of Contents**
 
 - [Before You Start](#before-you-start)
   - [Objective](#objective)
-  - [Project Requirements](#project-requirements)
-  - [Functions Key Terms](#functions-key-terms)
+  - [Requirements and Grading](#requirements-and-grading)
+  - [Functions Recap](#functions-recap)
 - [Lesson Steps](#lesson-steps)
   - [Work Flow](#work-flow-how-to-navigate-through-the-lesson-steps)
   - [TODO 0 : Preview Your Site](#todo-0-preview-your-site-with-live-server)
@@ -35,18 +35,24 @@ By the end of this project, you’ll have built a custom game level that’s rea
 
 <br><br>
 
-## **Project Requirements**
+## **Requirements and Grading**
 
-| Project Requirement             | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
-| **Create at least 5 platforms** | Platforms should be placed strategically throughout the game  |
-| **Add 3 collectables**          | Place collectables at various positions using different types |
-| **Add 3 cannons**               | Place cannons on different sides with varying delays          |
-| **Design a playable level**     | Create a level that’s challenging but achievable              |
+| Requirement                     | Description                                                   | Points |
+| ------------------------------- | ------------------------------------------------------------- | ------ |
+| **Create at least 5 platforms** | Platforms should be placed strategically throughout the game  | 30     |
+| **Add 3 collectables**          | Place collectables at various positions using different types | 30     |
+| **Add 3 cannons**               | Place cannons on different sides with varying delays          | 30     |
+| **Design a playable level**     | Create a level that’s challenging but achievable              | 10     |
 
 <br><br>
 
-## **Functions Key Terms**
+## **Functions Recap**
+
+Functions are reusable blocks of code that perform a specific task. You “call” a function to run the code inside it. Many functions require inputs, known as **_arguments_**, which are the specific values the function uses to perform its task.
+
+---
+
+### Key Terms
 
 <div style="width: 80%; margin: auto;">
 
@@ -58,8 +64,18 @@ By the end of this project, you’ll have built a custom game level that’s rea
 
 </div>
 
-<!-- 4 line breaks between TODOs -->
+---
 
+### Example
+
+For example, calling `createPlatform(500, 300, 200, 20);` means:
+
+- **500 and 300** are the x and y coordinates where the platform will appear.
+- **200 and 20** are the platform’s width and height.
+
+These numbers are **arguments** passed to the function, matching the **parameters** defined in the function.
+
+<!-- 4 line breaks between TODOs -->
 <br><br><br><br>
 
 # Lesson Steps
@@ -77,8 +93,29 @@ By the end of this project, you’ll have built a custom game level that’s rea
    - Click the `fsd-projects` folder 📂 in your file tree expand the list of projects.
    - Click on the `platformer` folder 📂 located within the `fsd-projects` folder.
    - Click on the `platformer.js` file. Coding for all steps will be done in this file.
+2. **Follow the instructions carefully** for each TODO:
 
-2. 🖥️ **Preview your game regularly using Live Server** to see how your changes affect the game level.
+   - Pay attention to where new code should be added.
+   - Only code inside the designated areas
+     - Make sure all function calls go between the _`ONLY CHANGE BELOW THIS POINT`_ and _`ONLY CHANGE ABOVE THIS POINT`_ comments.
+
+3. 🖥️ **Preview your game regularly using Live Server** to see how your changes affect the game level.
+
+---
+
+<table style="width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse; margin-top: 15px; background-color: #2c2c2c; border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+  <tr>
+    <th style="text-align: left; padding: 10px; background-color: #444; color: #e2e2e2; border-bottom: 1px solid #666;">
+      💡 Key Reminders
+    </th>
+  </tr>
+  <tr>
+    <td style="padding: 10px; color: #e2e2e2;">
+      - 📖 Read each step closely before adding any code.<br>
+      - 🖥️ Preview frequently to make sure your game is structured the way you would like it.
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -86,11 +123,10 @@ By the end of this project, you’ll have built a custom game level that’s rea
 
 ### ✅ **Check Your Work!**
 
-- **After each TODO**, use Live Server to preview your site and verify that your game is working as expected.
-- If you encounter issues, **use the console** to check for errors.
+- **After each TODO**, double-check your code to ensure it matches the examples.
+- If you encounter issues, **preview your site** using Live Server to troubleshoot.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
 ## **TODO 0: Preview Your Site with Live Server**
@@ -103,8 +139,15 @@ By the end of this project, you’ll have built a custom game level that’s rea
 
 There are two ways to open your project with **Live Server**:
 
-1. **Option 1: Right-Click** your `index.html` file in the file tree and select **“Open with Live Server.”**
-2. **Option 2: Use the Go Live button** in the bottom-right corner of your codespace.
+#### **Option 1: Right-Click Method**
+
+1. 📂 **Find the `index.html` file** in the file tree on the left side of your codespace.
+2. **Right-click on `index.html`** and select **“Open with Live Server.”**
+
+#### **Option 2: Go Live Button in the Bottom Panel**
+
+1. **Look at the bottom-right corner** of your codespace.
+2. **Click the “Go Live” button** to launch Live Server.
 
 <br>
 
@@ -116,7 +159,6 @@ There are two ways to open your project with **Live Server**:
   - Then navigate to your Platformer project by clicking the Platformer link.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
 ## **TODO 1: Enable the Grid**
@@ -128,10 +170,12 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Uncomment the `toggleGrid` function**
+
    - **Find the `toggleGrid()` line in your JavaScript file**. You’ll see it has `//` at the beginning, making it inactive.
    - Remove `//` to enable the grid in your game.
 
 2. **Check your game in Live Server**
+
    - Refresh your game to see a grid appear on the screen, marking x and y positions every 100 pixels.
    - This grid is optional but can be very helpful in placing game items more precisely.
 
@@ -164,7 +208,6 @@ There are two ways to open your project with **Live Server**:
 - Experiment with adding and removing the grid to see how it affects your ability to place items.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
 ## **TODO 2:** Add _Platforms_
@@ -176,6 +219,7 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. 🔍 **Locate the section in your code** where you can add platforms.
+
    - Add your code below the comment that says `// TODO 2 - Create Platforms`
    - You’ll be using the `createPlatform` function to set the position and size of each platform.
 
@@ -185,13 +229,13 @@ There are two ways to open your project with **Live Server**:
 
    <div style="width: 80%; margin: auto;">
 
-| Argument | Description                                                             | Example Value |
-| -------- | ----------------------------------------------------------------------- | ------------- |
-| `x`      | x-coordinate of the platform                                            | `500`         |
-| `y`      | y-coordinate of the platform                                            | `300`         |
-| `width`  | Width of the platform in pixels                                         | `200`         |
-| `height` | Height of the platform in pixels                                        | `20`          |
-| `color`  | (Optional) Color of the platform; will default to grey if not specified | `"hotpink"`   |
+| Argument | Description                                                             | Example Value        |
+| -------- | ----------------------------------------------------------------------- | -------------------- |
+| `x`      | x-coordinate of the platform                                            | `500`                |
+| `y`      | y-coordinate of the platform                                            | `300`                |
+| `width`  | Width of the platform in pixels                                         | `200`                |
+| `height` | Height of the platform in pixels                                        | `20`                 |
+| `color`  | (Optional) Color of the platform; will default to grey if not specified | `"hotpink"`          |
 
    </div>
 
@@ -212,7 +256,7 @@ createPlatform(1350, 400, 50, 50, "red");
 
 ### 🎨 Tip: Use Color to Track Your Progress!
 
-As you're adding and positioning platforms, it can be really helpful to change their colors _after_ they're in the right place.
+As you're adding and positioning platforms, it can be really helpful to change their colors *after* they're in the right place.
 
 This way, you can quickly spot which platforms are already finished and which ones you're still working on. It's a great habit for staying organized while building.
 
@@ -234,7 +278,7 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
   </tr>
   <tr>
     <td style="padding: 10px; color: #e2e2e2;">
-      ⚙️ <strong>Use trial and error!</strong> Platforms might not land perfectly on the first try. Adjust one argument at a time (x, y, width, or height) until you’re satisfied with the setup.
+      ⚙️ <strong>Use trial and error!</strong> Platforms might not land perfectly on the first try. Adjust the arguments (x, y, width, height) until you’re satisfied with the setup.
       <br><br>
       🪜 <strong>Work from the bottom up</strong>: Place your first platforms near the bottom of the game area. Building upward makes it easier to create a path the player can jump between.
     </td>
@@ -251,7 +295,6 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 - Make sure you have at least 5 platforms placed at different heights and positions.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
 ## **TODO 3:** Add _Collectables_
@@ -263,9 +306,11 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 ### Step-by-Step Instructions
 
 1. 🔍 **Locate the section in your code** designated for adding collectables.
+
    - Use the `createCollectable` function to add items at specific locations on the screen.
 
 2. **Understand the Arguments for `createCollectable`**
+
    - The `createCollectable` function requires arguments that control the item’s type and position.
    - Refer to the table below for details:
 
@@ -273,7 +318,7 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 
    | Argument  | Description                                                             | Example Value |
    | --------- | ----------------------------------------------------------------------- | ------------- |
-   | `type`    | The type of collectable (e.g., "database", "diamond")                   | `"diamond"`   |
+   | `type`    | The type of collectable (e.g., "database", "diamond")                          | `"diamond"`      |
    | `x`       | x-coordinate of the collectable                                         | `200`         |
    | `y`       | y-coordinate of the collectable                                         | `170`         |
    | `gravity` | (Optional) Controls how the item falls; set to `0` if it shouldn’t fall | `0.5`         |
@@ -283,7 +328,7 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 
    **Important**: You can use any of the following values for your `type`: `"database"`, `"diamond"`, `"grace"`, `"kennedi"`, `"max"`, and `"steve"`
 
-   ***
+   ---
 
    Example function calls:
 
@@ -307,7 +352,7 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
   <tr>
     <td style="padding: 10px; color: #e2e2e2;">
       💎 <strong>Experiment with positioning</strong>: Test different x and y values to place items at reachable spots. Adjust as needed so that the collectables are accessible.<br><br>
-      🔄 <strong>Use gravity and bounce carefully</strong>: These are optional values. Start with <code style="color: #79c0ff;">0</code> if you want a stationary item, and increase them slightly to add movement or challenge. Using <code style="color: #79c0ff;">1</code> for both values will make your object bounce to the same height each time.
+      🔄 <strong>Use gravity and bounce carefully</strong>: These are optional values. Start with <code>0</code> if you want a stationary item, and increase them slightly to add movement or challenge. Using <code>1</code> for both values will make your object bounce to the same height each time.
     </td>
   </tr>
 </table>
@@ -322,7 +367,6 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 - Make sure you have at least 3 collectables, with different types if possible.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
 ## **TODO 4:** Add _Cannons_
@@ -334,9 +378,11 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 ### Step-by-Step Instructions
 
 1. 🔍 **Locate the section in your code** for adding cannons.
+
    - Use the `createCannon` function to place each cannon along the screen edges.
 
 2. **Understand the Arguments for `createCannon`**
+
    - The `createCannon` function has arguments for placement and firing speed. Review the table for details:
 
    <div style="width: 80%; margin: auto;">
@@ -350,8 +396,9 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
    </div>
 
    **Important**: You can use any of the following string values for your `side`: `"top"`, `"bottom"`, `"left"`, or `"right"`
-
-   ***
+   
+  
+   --- 
 
    Example function calls:
 
@@ -389,7 +436,6 @@ createPlatform(100, 20, 10, 10, "lime"); // bright green for a finished platform
 - Ensure you have at least 3 cannons placed on different sides with varying delay intervals.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
 ## **TODO 5:** _Make your level challenging!_
@@ -401,20 +447,9 @@ Make sure your game unique and challenging! In order to get full credit your pro
 - Cannons are placed to create a challenge.
 
 <!-- 4 line breaks between TODOs -->
-
 <br><br><br><br>
 
-## Explore Bonus Challenges
-
-We've compiled a list of optional **bonus challenges** for you to take this project to the next level. These challenges add new features and complexity to your platformer game, including moving platforms, harmful platforms, new projectile sizes, moving cannons, and more dynamic collectables.
-
-- Access them on [GitHub here](https://github.com/OperationSpark/platformer-neo/blob/master/BONUS_CHALLENGES.md)
-
-<!-- 4 line breaks between TODOs -->
-
-<br><br><br><br>
-
-## **TODO 6:** _Go Live_
+## **TODO 6:** *Go Live*
 
 🎯 **Goal:** Push your changes to GitHub and make your platformer game go live.
 
@@ -431,11 +466,11 @@ We've compiled a list of optional **bonus challenges** for you to take this proj
 
 3. **Run the required git commands one by one** in the terminal, pressing enter after each command to run it. Reference the table and comment below for how to run the three commands:
 
-| Command                                     | Purpose                                                     |
-| ------------------------------------------- | ----------------------------------------------------------- |
-| `git add .`                                 | Stages all your changes so Git is aware of them.            |
-| `git commit -m "Finalized platformer game"` | Saves a version of your work with a brief message.          |
-| `git push`                                  | Uploads your committed changes to GitHub, making them live. |
+| Command              | Purpose                                                      |
+|----------------------|--------------------------------------------------------------|
+| `git add .`          | Stages all your changes so Git is aware of them.             |
+| `git commit -m "Finalized platformer game"`      | Saves a version of your work with a brief message.           |
+| `git push`           | Uploads your committed changes to GitHub, making them live.  |
 
 <br>
 
@@ -459,3 +494,15 @@ We've compiled a list of optional **bonus challenges** for you to take this proj
 <br>
 
 ### 🎉🎉🎉 Congratulations! You can now challenge your classmates and friends to beat your customized game! 🎉🎉🎉
+
+### **Bonus Challenges**
+
+1. **Moving Collectable Challenge**:
+   - Create a collectable that moves horizontally between two points (100 and 300 pixels)
+   - Example: `createCollectable("gem", 200, 100, 0, 1, 100, 300, 2)`
+   - The collectable should smoothly move back and forth at a reasonable speed
+
+2. **Moving Platform Challenge**:
+   - Design a platform that moves horizontally between two positions
+   - Example: `createPlatform(400, 300, 200, 20, "blue", 300, 500, 1)`
+   - Make sure the platform is wide enough for HalleBot to land on while moving

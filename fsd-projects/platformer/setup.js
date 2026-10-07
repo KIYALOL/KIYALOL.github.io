@@ -27,7 +27,6 @@ const player = {
   onGround: false,
   facingRight: true,
   deadAndDeathAnimationDone: false,
-  winConditionMet: false,
 };
 
 let hitDx;
@@ -74,7 +73,6 @@ let offsetY = 0;
 // Platform, cannon, projectile, and collectable variables
 let platforms = [];
 let fakePlatforms = [];
-let badPlatforms = [];
 let cannons = [];
 const cannonWidth = 118;
 const cannonHeight = 80;
@@ -102,4 +100,5 @@ var collectableList = {
   kennedi: { image: "images/collectables/kennedi-head.png" },
   max: { image: "images/collectables/max-head.png" },
   steve: { image: "images/collectables/steve-head.png" },
+    vbuck: { image: "https://freepngimg.com/thumb/android/91114-symbol-one-royale-fortnite-battle-circle-xbox.png" },
 };
